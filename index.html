@@ -1,0 +1,93 @@
+gsap.registerPlugin(ScrollTrigger)
+
+/* HERO ANIMATION */
+
+gsap.from(".hero h1",{opacity:0,y:40,duration:1})
+gsap.from(".hero button",{opacity:0,y:30,delay:.3})
+
+/* CARD ANIMATION */
+
+gsap.from(".card",{
+scrollTrigger:{
+trigger:".cards",
+start:"top 85%"
+},
+opacity:0,
+y:60,
+stagger:.2
+})
+
+/* COUNTER */
+
+document.querySelectorAll(".stat").forEach(counter=>{
+
+let target=+counter.dataset.count
+let count=0
+
+function update(){
+
+count+=target/60
+
+if(count<target){
+counter.innerText=Math.floor(count)
+requestAnimationFrame(update)
+}else{
+counter.innerText=target
+}
+
+}
+
+ScrollTrigger.create({
+trigger:counter,
+start:"top 90%",
+once:true,
+onEnter:update
+})
+
+})
+
+/* MENU */
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active")
+}
+
+/* AUTO CLOSE MENU */
+
+document.querySelectorAll("nav a").forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("menu").classList.remove("active")
+})
+})
+
+/* DARK MODE */
+
+function toggleDark(){
+
+document.body.classList.toggle("dark")
+
+}
+
+/* SCROLL CONTACT */
+
+function scrollContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"})
+}
+
+/* SCROLL TOP */
+
+const topBtn=document.querySelector(".top")
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>400){
+topBtn.style.display="block"
+}else{
+topBtn.style.display="none"
+}
+
+})
+
+function scrollTop(){
+window.scrollTo({top:0,behavior:"smooth"})
+}

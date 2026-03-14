@@ -1,0 +1,378 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarun Classes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--blue:#2563EB;
+--orange:#FF8A00;
+--bg:#f8fbff;
+}
+
+body{
+background:var(--bg);
+color:#333;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 8%;
+background:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:var(--blue);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav li{
+margin:0 15px;
+}
+
+nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:100px 8%;
+background:linear-gradient(120deg,#2563EB,#4f8cff);
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:14px 28px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:white;
+color:#2563EB;
+font-weight:600;
+}
+
+/* ANIMAL CHARACTERS */
+
+.characters{
+position:relative;
+}
+
+.characters img{
+width:180px;
+position:absolute;
+transition:transform .2s;
+}
+
+.monkey{
+left:0;
+top:-30px;
+}
+
+.ant{
+left:200px;
+top:40px;
+}
+
+/* SECTIONS */
+
+.section{
+padding:100px 8%;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card button{
+margin-top:15px;
+padding:10px 20px;
+background:var(--blue);
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ANIMAL FACTS */
+
+.animal{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:30px;
+margin-top:50px;
+}
+
+.animal img{
+width:150px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#eef4ff;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+input,textarea{
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button.submit{
+background:#2563EB;
+color:white;
+padding:12px;
+border:none;
+border-radius:6px;
+}
+
+/* FLOATING JOIN BUTTON */
+
+.join-float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#FF8A00;
+color:white;
+padding:15px 20px;
+border-radius:40px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🎓 Tarun Classes</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#facts">Fun Facts</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Learn Smart. Score High.</h1>
+
+<button onclick="scrollContact()">Join Now</button>
+
+</div>
+
+<div class="characters">
+
+<img class="monkey" id="monkey" src="https://cdn-icons-png.flaticon.com/512/616/616430.png">
+
+<img class="ant" id="ant" src="https://cdn-icons-png.flaticon.com/512/1998/1998719.png">
+
+</div>
+
+</section>
+
+<!-- COURSES -->
+
+<section class="section" id="courses">
+
+<h2>Courses For Different Classes</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Class 6–8</h3>
+<p>Foundation Mathematics & Science</p>
+<button onclick="scrollContact()">Join</button>
+</div>
+
+<div class="card">
+<h3>Class 9–10</h3>
+<p>Board Exam Preparation</p>
+<button onclick="scrollContact()">Join</button>
+</div>
+
+<div class="card">
+<h3>Class 11–12</h3>
+<p>Advanced Physics Chemistry Math</p>
+<button onclick="scrollContact()">Join</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- ANIMAL FACTS -->
+
+<section class="section" id="facts">
+
+<h2>Fun Learning Facts</h2>
+
+<div class="animal">
+
+<img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+<p>
+🦁 Lion says: Did you know?  
+The Fibonacci sequence appears in nature and mathematics everywhere!
+</p>
+
+</div>
+
+<div class="animal">
+
+<img src="https://cdn-icons-png.flaticon.com/512/616/616554.png">
+
+<p>
+🐊 Crocodile scientist says:  
+Water expands when it freezes — that’s why ice floats!
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<form action="https://formspree.io/f/mojkwjen" method="POST">
+
+<input name="name" placeholder="Name" required>
+
+<input name="email" placeholder="Email" required>
+
+<input name="phone" placeholder="Phone">
+
+<textarea name="message" placeholder="Message"></textarea>
+
+<button class="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<!-- FLOAT BUTTON -->
+
+<div class="join-float" onclick="scrollContact()">
+Join Now
+</div>
+
+<script>
+
+/* MOUSE FOLLOW ANIMATION */
+
+document.addEventListener("mousemove",(e)=>{
+
+let monkey=document.getElementById("monkey")
+let ant=document.getElementById("ant")
+
+let x=(e.clientX/window.innerWidth-.5)*20
+let y=(e.clientY/window.innerHeight-.5)*20
+
+monkey.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`
+ant.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`
+
+})
+
+/* SCROLL ANIMATIONS */
+
+gsap.from(".card",{
+opacity:0,
+y:60,
+duration:1,
+stagger:.2,
+scrollTrigger:{
+trigger:".cards",
+start:"top 80%"
+}
+})
+
+/* SCROLL TO CONTACT */
+
+function scrollContact(){
+document.getElementById("contact").scrollIntoView({
+behavior:"smooth"
+})
+}
+
+</script>
+
+</body>
+</html>
+```
